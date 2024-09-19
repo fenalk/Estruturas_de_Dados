@@ -35,7 +35,7 @@ public class ListaEncadeada {
         }
 
         if (anterior == null) {
-            primeiro = atual.proximo;
+            primeiro = atual.proximo; 
         } else {
             anterior.proximo = atual.proximo;
         }
@@ -74,15 +74,14 @@ public class ListaEncadeada {
     public void mostrarContatosComValor(int telefone) {
         Contato atual = primeiro;
         boolean encontrado = false;
-        boolean duplicado = false;
-        int contadorDuplicados = 0;
+        boolean repetido = false;
+        int contadorRepetido = 0;
 
-    // Iterar por toda a lista
         while (atual != null) {
             if (atual.telefone == telefone) {
                 atual.exibirContato();
                 encontrado = true;
-                contadorDuplicados++; 
+                contadorRepetido++; 
             }
             atual = atual.proximo;
         }
@@ -91,13 +90,13 @@ public class ListaEncadeada {
             System.out.println("Nenhum contato com o telefone informado foi encontrado.");
         }
 
-        if (contadorDuplicados > 1) {
-            System.out.println("Existem " + contadorDuplicados + " contatos com o mesmo número de telefone.");
-            duplicado = true;
+        if (contadorRepetido > 1) {
+            System.out.println("Existem " + contadorRepetido + " contatos com o mesmo número de telefone.");
+            repetido = true;
         }
 
-        if (!duplicado) {
-            System.out.println("Não há duplicatas para o número de telefone informado.");
+        if (!repetido) {
+            System.out.println("Não há repetidos para o número de telefone informado.");
         }
     }
 
@@ -109,13 +108,13 @@ public class ListaEncadeada {
             while (comparador.proximo != null) {
                 if (atual.telefone == comparador.proximo.telefone) {
                     comparador.proximo = comparador.proximo.proximo;
-                    System.out.println("Contato duplicado removido.");
+                    System.out.println("Contato repetido removido.");
                 } else {
                     comparador = comparador.proximo;
                 }
             }
             atual = atual.proximo;
         }
-        System.out.println("Contatos duplicados removidos.");
+        System.out.println("Contatos repetidos removidos.");
     }
 }
