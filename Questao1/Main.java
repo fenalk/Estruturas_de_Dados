@@ -24,14 +24,14 @@ public class Main {
 
             System.out.print("Escolha uma opção: ");
             opcao = scanner.nextInt();
-            scanner.nextLine(); // Limpa o buffer
+            scanner.nextLine(); 
 
             if (opcao == 1) {
                 System.out.print("Digite o nome: ");
                 nome = scanner.nextLine();
                 System.out.print("Digite o telefone: ");
                 telefone = scanner.nextInt();
-                scanner.nextLine(); // Limpa o buffer
+                scanner.nextLine();
                 System.out.print("Digite o email: ");
                 email = scanner.nextLine();
                 agenda.incluirContato(nome, telefone, email);
