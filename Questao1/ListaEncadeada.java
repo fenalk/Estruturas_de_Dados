@@ -5,18 +5,17 @@ public class ListaEncadeada {
         this.primeiro = null; 
     }
 
-    // Método para incluir um contato
     public void incluirContato(String nome, int telefone, String email) {
         Contato novoContato = new Contato(nome, telefone, email);
 
         if (primeiro == null) {
-            primeiro = novoContato; // Se a lista estiver vazia
+            primeiro = novoContato; 
         } else {
             Contato atual = primeiro;
             while (atual.proximo != null) {
                 atual = atual.proximo;
             }
-            atual.proximo = novoContato; // Adiciona o novo contato ao final da lista
+            atual.proximo = novoContato; 
         }
         System.out.println("Contato incluído com sucesso!");
     }
@@ -36,7 +35,7 @@ public class ListaEncadeada {
         }
 
         if (anterior == null) {
-            primeiro = atual.proximo; // Remove o primeiro contato
+            primeiro = atual.proximo;
         } else {
             anterior.proximo = atual.proximo;
         }
@@ -83,7 +82,7 @@ public class ListaEncadeada {
             if (atual.telefone == telefone) {
                 atual.exibirContato();
                 encontrado = true;
-                contadorDuplicados++; // Contar quantas vezes o telefone foi encontrado
+                contadorDuplicados++; 
             }
             atual = atual.proximo;
         }
